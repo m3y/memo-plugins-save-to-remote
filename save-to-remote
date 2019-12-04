@@ -19,4 +19,4 @@ if [ "xy" != "x${yn}" ]; then
 fi
 
 echo "== git commit && push =="
-(cd ${MEMODIR} && git add && git commit -am'update documents' && git push)
+(cd ${MEMODIR} && git add . && git commit -am'update documents' && git push)
