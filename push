@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "x$1" = "x-usage" ]; then
-    echo "push memo to remote."
+    echo "Push memo to remote."
     exit 0
 fi
 
@@ -9,7 +9,7 @@ MEMODIR=`cat ~/.config/memo/config.toml | grep memodir | awk -F\" '{print $2}'`
 echo "Push the following content to github."
 echo " - ${MEMODIR}\n"
 
-echo "== git status =="
+echo "= = = status = = ="
 (cd ${MEMODIR} && git status)
 
 echo ""
@@ -18,5 +18,5 @@ if [ "xy" != "x${yn}" ]; then
     exit 1
 fi
 
-echo "== git commit && push =="
+echo -e "\n= = = exec log = = ="
 (cd ${MEMODIR} && git add . && git commit -am'update documents' && git push)
