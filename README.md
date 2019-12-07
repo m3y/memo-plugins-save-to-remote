@@ -2,5 +2,6 @@
 
 ## Install
 ```
-$ cp save-to-remote ~/.config/memo/plugins/
+$ cp pull ~/.config/memo/plugins/
+$ cp push ~/.config/memo/plugins/
 ```
