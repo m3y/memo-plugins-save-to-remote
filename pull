@@ -6,10 +6,13 @@ if [ "x$1" = "x-usage" ]; then
 fi
 
 MEMODIR=`cat ~/.config/memo/config.toml | grep memodir | awk -F\" '{print $2}'`
-echo -e "Pull memo from GitHub.\n\nTarget directory"
-echo -e " - ${MEMODIR}\n"
+echo "Pull memo from GitHub."
+echo ""
+echo "Target directory"
+echo " - ${MEMODIR}"
+echo ""
+echo "= = = exec log = = ="
 
-echo -e "= = = exec log = = ="
 CURRENT_STATUS=`cd ${MEMODIR} && git status -s`
 if [ "x${CURRENT_STATUS}" != "x" ]; then
     (cd ${MEMODIR} && git stash && git pull && git stash pop)

@@ -7,8 +7,8 @@ fi
 
 MEMODIR=`cat ~/.config/memo/config.toml | grep memodir | awk -F\" '{print $2}'`
 echo "Push the following content to github."
-echo " - ${MEMODIR}\n"
-
+echo " - ${MEMODIR}"
+echo ""
 echo "= = = status = = ="
 (cd ${MEMODIR} && git status)
 
@@ -18,5 +18,6 @@ if [ "xy" != "x${yn}" ]; then
     exit 1
 fi
 
-echo -e "\n= = = exec log = = ="
+echo ""
+echo "= = = exec log = = ="
 (cd ${MEMODIR} && git add . && git commit -am'update documents' && git push)
