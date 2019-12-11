@@ -1,4 +1,4 @@
-# memo-plugins-save-to-remote
+# memo-sync-plugins
 
 ## Install
 ```
