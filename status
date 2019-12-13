@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "x$1" = "x-usage" ]; then
+    echo "Check current status."
+    exit 0
+fi
+
+MEMODIR=`cat ~/.config/memo/config.toml | grep memodir | awk -F\" '{print $2}'`
+echo "Check current memo status."
+echo ""
+echo "Target directory"
+echo " - ${MEMODIR}"
+echo ""
+echo "= = = current status = = ="
+(cd ${MEMODIR} && git status)
