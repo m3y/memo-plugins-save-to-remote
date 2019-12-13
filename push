@@ -9,7 +9,7 @@ MEMODIR=`cat ~/.config/memo/config.toml | grep memodir | awk -F\" '{print $2}'`
 echo "Push the following content to github."
 echo " - ${MEMODIR}"
 echo ""
-echo "= = = status = = ="
+echo "= = = current status = = ="
 (cd ${MEMODIR} && git status)
 
 echo ""
