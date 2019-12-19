@@ -2,7 +2,7 @@
 
 ## Install
 ```
-$ cp pull ~/.config/memo/plugins/
-$ cp push ~/.config/memo/plugins/
-$ cp status ~/.config/memo/plugins/
+$ cp pull $(memo config --cat | grep pluginsdir | awk -F\" '{print $2}')
+$ cp push $(memo config --cat | grep pluginsdir | awk -F\" '{print $2}')
+$ cp status $(memo config --cat | grep pluginsdir | awk -F\" '{print $2}')
 ```
